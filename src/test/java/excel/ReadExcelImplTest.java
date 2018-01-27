@@ -1,13 +1,13 @@
 package excel; 
 
 
-import excel.excelImpl.ReadExcelImpl;
+import excel.excelImpl.ReadExcel;
 import org.junit.Test;
 import org.junit.Before; 
 import org.junit.After; 
 
 /** 
-* ReadExcelImpl Tester. 
+* ReadExcel Tester.
 * 
 * @author $author
 * @since <pre>01/27/2018</pre> 
@@ -41,8 +41,7 @@ public void testReadXls() throws Exception {
 @Test
 public void testReadXlsx() throws Exception {
     String fileName = "C:\\Users\\guoqing\\Desktop\\测试.xlsx";
-    ReadExcel readExcel = new ReadExcelImpl();
-    String[][] strings = readExcel.readExcel(fileName);
+    String[][] strings = ReadExcel.readExcel(fileName);
     for (String[] string : strings) {
         for (String s : string) {
             System.out.println(s);

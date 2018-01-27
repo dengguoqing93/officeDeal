@@ -1,6 +1,5 @@
 package excel.excelImpl;
 
-import excel.ReadExcel;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -17,10 +16,10 @@ import java.io.IOException;
  * @createDate： 2018/1/27 18:45
  * @Description: ${Descriptions}
  */
-public class ReadExcelImpl implements ReadExcel {
+public class ReadExcel {
 
 
-    public String[][] readExcel(String excelName) throws IOException {
+    public static String[][] readExcel(String excelName) throws IOException {
         Workbook wb = dealExcel(excelName);
         Sheet sheet = wb.getSheetAt(0);
         int i = 0;
@@ -45,7 +44,7 @@ public class ReadExcelImpl implements ReadExcel {
     }
 
 
-    private Workbook dealExcel(String excelName) throws IOException {
+    private static Workbook dealExcel(String excelName) throws IOException {
         Workbook wb;
         FileInputStream inputStream = new FileInputStream(new File(excelName));
         if (excelName.endsWith(".xls")) {
